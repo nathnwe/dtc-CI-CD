@@ -175,7 +175,6 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "numpy" },
-    { name = "pytest" },
 ]
 
 [package.optional-dependencies]
@@ -193,7 +192,6 @@ docs = [
 requires-dist = [
     { name = "numpy" },
     { name = "pre-commit", marker = "extra == 'dev'" },
-    { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "ruff", marker = "extra == 'dev'" },
