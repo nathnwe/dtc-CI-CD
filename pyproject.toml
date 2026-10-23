@@ -53,3 +53,11 @@ testpaths = ["tests"]
 
 [tool.coverage.run]
 source = ["ci_course"]
+
+[tool.coverage.report]
+show_missing = true
+
+[dependency-groups]
+dev = [
+    "pytest-cov>=7.1.0",
+]
