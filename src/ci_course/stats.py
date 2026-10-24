@@ -39,6 +39,15 @@ def summarise(values):
 
 
 def count_missing(values):
+    """
+    Return the total number of missing values in one column.
+
+    Args:
+        values (List(int)): A column of measurements.
+
+    Returns:
+        int: The number of missing values.
+    """
     values = np.asarray(values, dtype=float)
     return int(np.isnan(values).sum())
 
