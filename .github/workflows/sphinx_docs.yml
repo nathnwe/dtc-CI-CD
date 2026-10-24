@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 jobs:
-  sphinx-docs-deployment
+  sphinx-docs-deployment:
     runs-on: macos-latest
 
     steps:
