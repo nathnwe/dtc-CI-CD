@@ -13,7 +13,7 @@ def test_summarises_a_complete_column():
 
 def test_null_array():
     summary = ci_course.summarise(np.array([np.nan, np.nan]))
-    
+
     assert summary['n'] == 0
     assert np.isnan(summary['mean'])
     assert np.isnan(summary['sd'])

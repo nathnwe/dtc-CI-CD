@@ -21,10 +21,10 @@ def test_blank_cells_are_read_as_missing():
 def test_value_error(tmp_path):
     csv = tmp_path / "measurements.csv"
     csv.write_text("sample_id,height_m\nA,6'2\nB,5'11\n", encoding="utf-8")
-    
+
     errors = []
     data = ci_course.load_measurements(path=csv, errors=errors)
-    
+
     assert np.isnan(data["height_m"][0])
     assert np.isnan(data["height_m"][1])
     assert len(errors) == 2
