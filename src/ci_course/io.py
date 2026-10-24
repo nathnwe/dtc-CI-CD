@@ -40,7 +40,8 @@ def load_measurements(path=None, errors=None):
     dict
         A mapping of column name to :class:`numpy.ndarray` of float.
     """
-    errors = []
+    if errors is None: #Required to not overload user input if present
+        errors = []
 
     if path is None:
         path = sample_data_path()
@@ -57,8 +58,9 @@ def load_measurements(path=None, errors=None):
                     continue
                 try:
                     columns[name].append(float(raw))    #float() will fail if type is non-numerical.
-                except TypeError:
+                except ValueError:
                     columns[name].append(float("nan"))
                     errors.append(row)
+                    print(f"Appended: {row}")
 
     return {name: np.array(values) for name, values in columns.items()}
